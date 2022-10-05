@@ -1,0 +1,27 @@
+<div class= "container text-align-center">
+  <div class= "row justify-content-center">
+    <div class= "col-6 mt-2">
+    <div class="header" style="text-align: center; margin-top: 8px;">
+      <h1>Add a new Event</h1>
+    </div>
+      <%= simple_form_for(@event) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <div class="form-inputs">
+          <%= f.input :event_name %>
+          <%= f.input :location %>
+          <%= f.input :start_time %>
+          <%= f.input :end_time %>
+          <%# <%= f.input :country, %>
+            <%# input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+            wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
+          %>
+          <%#= f.association :users, as: :check_boxes %>
+        </div>
+        <div class="form-actions mb-1" style="margin-bottom: 12px !important;">
+          <%= f.button :submit, class: "btn button-primary2" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
