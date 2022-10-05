@@ -5,4 +5,8 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :profiles do
+    resources :profiles, only: :show
+  end
+  get '/profiles/index', to: 'profiles#index', as: :index_path
 end
