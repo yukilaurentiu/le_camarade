@@ -1,0 +1,8 @@
+<h1>index-chatroom</h1>
+
+<% @chatrooms.each do |chatroom|  %>
+<ul>
+  <%= chatroom.id %>
+<ul>
+<% end %>
+<%= link_to "new chat", new_chatroom_path%>

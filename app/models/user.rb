@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_one :profile
   has_many :events, dependent: :destroy
+  has_many :chatroom, dependent: :destroy
   has_one_attached :avatar
 
   after_create :create_profile
@@ -13,6 +14,6 @@ class User < ApplicationRecord
   private
 
   def create_profile
-    # Profile.create(user: self)
+    Profile.create(user: self)
   end
 end
