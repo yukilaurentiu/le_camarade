@@ -1,0 +1,15 @@
+<h1>Profile</h1>
+  <% @profiles.each do |profile| %>
+    <%= profile.fullname %>
+  <% end %>
+<%= form_with model: @profile do |f| %>
+  <%= f.label :fullname %>
+  <%= f.number_field :batch_number %>
+  <%= f.text_field :biography %>
+  <%= f.number_field :contact_info %>
+  <%= f.label :company %>
+  <%= f.label :location %>
+  <%= f.text_field :skills %>
+  <%= f.text_field :hobby %>
+  <%= f.submit %>
+<% end %>

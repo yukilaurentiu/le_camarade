@@ -13,6 +13,6 @@ class ProfilesController < ApplicationController
 
   def update
     @profiles = Profile.find(params[:id])
-    @profiles.update(params[:profiles])
+    @profiles.update(params[:profile])
   end
 end
