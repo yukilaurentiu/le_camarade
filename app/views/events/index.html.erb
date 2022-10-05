@@ -1,0 +1,21 @@
+<div class="event-index-container">
+  <div class="events-heading mt-2">
+    <h1>Events</h1>
+  </div>
+  <%= link_to "Add event", new_event_path, class: "button-primary2" %>
+  <div class="row justify-content-center mt-3">
+    <% @events.each do |event| %>
+      <div class="grid w-100">
+        <div class="g-col-3">
+          <%= render event %>
+        </div>
+      </div>
+      <div class="border-div">
+      </div>
+    <% end %>
+  </div>
+
+  <%#= link_to "New event bookmark", new_event_bookmark_path %>
+  <%#= link_to "Go to event bookmarks ", event_bookmarks_path %>
+
+</div>

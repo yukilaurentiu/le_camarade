@@ -1,0 +1,36 @@
+<div class="event-show-container">
+  <div class="d-flex justify-content-between" style="margin-top: 16px;">
+    <div class="event-details" style="width: 30%;">
+      <%#   E V E N T - D E T A I L S  %>
+      <div class="p-2">
+        <div class="event-show-card" style="width: 100%;">
+          <h1> <%= @event.event_name %></h1><br>
+          <p> <%= @event.location %>.</p>
+          <p> <%= "Email adress of event founder: " %><%= @event.user.email %>.</p>
+          <p> <%= @event.start_time %>.</p>
+          <p> <%= @event.end_time %>.</p><br>
+          <div class="d-flex price-book">
+            <div class="btn btn-warning">
+              <%= link_to "🔙", events_path %>
+            </div>
+            <% if current_user == @event.user %>
+              <div class="d-flex p-2">
+                <div style="margin: 10px 0 0 10px;;">
+                  <div class="btn btn-warning">
+                  <%= link_to "Edit", edit_event_path(@event) %>
+                  </div>
+                  <div class="btn btn-warning">
+                    <%= link_to "🗑️", @event, method: :delete %>
+                  </div>
+                </div>
+              </div>
+            <% else %>
+            <%#= link_to "📖 Book", new_event_bookmark_path(@event), class: "btn button-primary2"%>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div> <%# closed-flex align-content-center flex-wrap %>
+</div> <%# close Container %>
