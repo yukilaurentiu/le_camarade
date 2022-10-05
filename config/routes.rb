@@ -3,9 +3,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :events
-  resources :users do
-    resources :chatroom
-  end
+  resources :chatrooms
+  
   resources :profiles do
     resources :profiles, only: :show
   end
