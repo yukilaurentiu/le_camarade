@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_04_105543) do
-
+ActiveRecord::Schema[7.0].define(version: 2022_10_06_121129) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "chatroom_name"
+    t.bigint "user_id"
+    t.bigint "receiver_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_chatrooms_on_receiver_id"
+    t.index ["user_id"], name: "index_chatrooms_on_user_id"
+  end
 
   create_table "events", force: :cascade do |t|
     t.date "start_time"
@@ -52,5 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_04_105543) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "chatrooms", "users"
+  add_foreign_key "chatrooms", "users", column: "receiver_id"
   add_foreign_key "profiles", "users"
 end
