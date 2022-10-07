@@ -1,8 +1,11 @@
 
-<div class="container chatroom">
+<div class="container chatroom"
+  data-controller="chatroom-subscription"
+  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+>
   <h1>#<%= @chatroom.name %></h1>
 
-  <div class="messages">
+  <div class="messages" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <div id="message-<%= message.id %>">
         <small>
@@ -15,12 +18,13 @@
   </div>
 </div>
 
+<%# We want to reset the form after the message has been sent %>
 <%= simple_form_for [@chatroom, @message],
-  html: {class: "d-flex"} do |f|
+  html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
 %>
   <%= f.input :content,
     label: false,
-    placeholder: "Message ##{@chatroom.name}",
+    placeholder: "Message in ##{@chatroom.name}",
     wrapper_html: {class: "flex-grow-1"}
   %>
   <%= f.submit "Send", class: "btn btn-primary mb-3" %>
