@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :events
-  resources :chatrooms
+  resources :chatrooms do
+    resources :messages, only: :create
+  end
   resources :profiles do
     resources :profiles, only: :show
   end
