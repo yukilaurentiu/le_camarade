@@ -9,7 +9,7 @@ export default class extends Controller {
     this.channel = createConsumer().subscriptions.create(
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       // received stores the function which is called when data is broadcasted in the channel.
-      { received: data =>  this.messagesTarget.insertAdjacentHTML("beforeend", data)},
+      // { received: data =>  this.messagesTarget.insertAdjacentHTML("beforeend", data)},
       { received: data => this.#insertMessageAndScrollDown(data)  }
     )
     console.log(`Subscribe to the chatroom with the id ${this.chatroomIdValue}.`)
