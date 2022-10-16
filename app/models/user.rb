@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_one :profile
+  has_one :profile, dependent: :destroy
   has_many :events, dependent: :destroy
   has_one_attached :avatar
 
@@ -13,6 +13,6 @@ class User < ApplicationRecord
   private
 
   def create_profile
-    # Profile.create(user: self)
+    Profile.create(user: self)
   end
 end
