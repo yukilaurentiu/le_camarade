@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root to: "pages#home"
- 
+  resources :profiles
+  devise_for :users, controllers: { sessions: 'users/sessions' }
+  root to: "profiles#index"
+  # root to: "users#index"
+
   resources :events
-  resources :profiles do
-    resources :profiles, only: :show
+  resources :users do
+    resources :profiles, only: [:index, :show, :edit, :update]
   end
-  get '/profiles/index', to: 'profiles#index', as: :index_path
+  # get 'profiles', to: 'profiles#index', as: :index_path
+  # get "profiles/:id", to: "profiles#show", as: :show_path
 end
