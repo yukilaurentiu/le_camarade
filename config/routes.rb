@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
+  root to: "pages#home"
   resources :profiles
-  devise_for :users, controllers: { sessions: 'users/sessions' }
-  root to: "profiles#index"
+  devise_for :users
   # root to: "users#index"
 
   resources :events
-  resources :chatrooms, only: :show do
+  resources :chatrooms do
     resources :messages, only: :create
   end
   resources :users do

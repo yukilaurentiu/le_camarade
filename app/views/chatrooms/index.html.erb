@@ -1,0 +1,13 @@
+<div class="container text-center">
+  <h1>Chatrooms</h1>
+    <ul>
+      <% @chatrooms.each do |chatroom| %>
+        <%= link_to chatroom_path(chatroom) do %>
+          <h2 class="mb-1"><%= chatroom.id%></h2>
+        <% end %>
+      <% end %>
+    </ul>
+
+  <%= link_to "start chat", new_chatroom_path %>
+  <%= link_to "homepage", root_path %>
+</div>

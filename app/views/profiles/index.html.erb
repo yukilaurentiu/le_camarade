@@ -3,7 +3,7 @@
     <ul>
       <% @profiles.each do |profile| %>
         <%= link_to profile_path(profile) do %>
-          <h2 class="mb-1"><%= profile.fullname %></h2>
+          <h2 class="mb-1"><%= profile.id%></h2>
         <% end %>
     </ul>
   <%= profile.id %>
@@ -12,4 +12,5 @@
   <br><br>
   <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
   <%= link_to "Login", new_user_session_path %>
+   <%= link_to "homepage", root_path %>
 </div>
