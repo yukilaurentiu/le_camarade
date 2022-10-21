@@ -12,6 +12,8 @@
 </div>
 
 <div class="col align-self-end">
-  <%= link_to "Update", edit_profile_path(@profile) %>
-  <%= link_to "back", profiles_path %>
+  <% if policy(@profile).edit? %>
+    <%= link_to "Update", edit_profile_path(@profile) %>
+  <% end %>
+    <%= link_to "back", profiles_path %>
 </div>
