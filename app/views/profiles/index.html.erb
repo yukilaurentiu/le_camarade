@@ -1,15 +1,15 @@
-<h1>Profile</h1>
-  <% @profiles.each do |profile| %>
-    <%= profile.fullname %>
+<div class="container text-center">
+  <h1>Profile</h1>
+    <ul>
+      <% @profiles.each do |profile| %>
+        <%= link_to profile_path(profile) do %>
+          <h2 class="mb-1"><%= profile.fullname %></h2>
+        <% end %>
+    </ul>
+  <%= profile.id %>
   <% end %>
-<%= form_with model: @profile do |f| %>
-  <%= f.label :fullname %>
-  <%= f.number_field :batch_number %>
-  <%= f.text_field :biography %>
-  <%= f.number_field :contact_info %>
-  <%= f.label :company %>
-  <%= f.label :location %>
-  <%= f.text_field :skills %>
-  <%= f.text_field :hobby %>
-  <%= f.submit %>
-<% end %>
+
+  <br><br>
+  <%= link_to "Logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+  <%= link_to "Login", new_user_session_path %>
+</div>
