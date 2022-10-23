@@ -30,10 +30,22 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def destroy
-    Event.destroy(params[:id])
-    redirect_to :controller => 'events', :action => 'index'
+  def update
+    @event = Event.find(params[:id])
+    @event.update(event_params)
+    redirect_to event_path(@event)
   end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to events_path, status: :see_other
+  end
+
+  # def destroy
+  #   Event.destroy(params[:id])
+  #   redirect_to :controller => 'events', :action => 'index'
+  # end
 
   private
 
