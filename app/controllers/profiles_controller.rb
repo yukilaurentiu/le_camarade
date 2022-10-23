@@ -4,15 +4,26 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @profiles = Profile.find(params[:id])
+    @profile = Profile.find(params[:id])
   end
 
   def edit
-    @profiles = Profile.find(params[:id])
+    redirect_to root_path unless current_user
+    @profile = Profile.find(params[:id])
   end
 
   def update
-    @profiles = Profile.find(params[:id])
-    @profiles.update(params[:profile])
+    @profile = Profile.find(params[:id])
+    if @profile.update(profile_params)
+      redirect_to profile_path(@profile), status: :see_other, notice: "You successfully updated your profile: #{@profile.fullname}"
+    else
+      render :new
+    end
+  end
+
+  private
+
+  def profile_params
+    params.require(:profile).permit(:fullname, :batch_number, :biography, :contact_info, :company, :location, :skills, :hobby)
   end
 end
