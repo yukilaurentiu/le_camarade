@@ -17,10 +17,13 @@
               <div class="d-flex p-2">
                 <div style="margin: 10px 0 0 10px;;">
                   <div class="btn btn-warning">
-                  <%= link_to "Edit", edit_event_path(@event) %>
+                  <% if policy(@event).edit? %>
+                    <%= link_to "Edit", edit_event_path(@event) %>
+                  <% end %>
                   </div>
                   <div class="btn btn-warning">
-                    <%= link_to "🗑️", event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                    <%#= link_to "🗑️", event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+                    <%= button_to "🗑️", @event, method: :delete if policy(@event).destroy? %>
                   </div>
                 </div>
               </div>
