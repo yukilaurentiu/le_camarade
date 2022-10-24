@@ -9,10 +9,10 @@
       <% @chatroom.messages.each do |message| %>
         <div id="message-<%= message.id %>">
           <small>
-            <% if current_user == message.user %>
-              <%= render(partial: "shared/avatar") %>
+            <% if message.user.avatar.present? %>
+              <img src="<%=(url_for(message.user.avatar))%>", class="avatar">
             <% else %>
-              <%= image_tag "defalt.png", class: "avatar" %>
+              <%= image_tag "logo.png", class: "avatar" %>
             <% end %>
             <strong><%= message.user.nickname %></strong>
             <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>

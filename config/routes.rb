@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-
   root to: "pages#home"
   resources :profiles
+
   devise_for :users
   # root to: "users#index"
 
