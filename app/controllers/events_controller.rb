@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all.order("created_at DESC")
+    @events = policy_scope(Event)
   end
   # def list
   #   @events = Event.all
@@ -8,11 +9,13 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    authorize @event
   end
 
   def create
     @event = Event.new(event_params)
     @event.user = current_user
+    authorize @event
     if @event.save
       # redirect_to index_path_url
       redirect_to event_path(@event)
@@ -24,20 +27,24 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @events = Event.all
+    authorize @event
   end
 
   def edit
     @event = Event.find(params[:id])
+    authorize @event
   end
 
   def update
     @event = Event.find(params[:id])
+    authorize @event
     @event.update(event_params)
     redirect_to event_path(@event)
   end
 
   def destroy
     @event = Event.find(params[:id])
+    authorize @event
     @event.destroy
     redirect_to events_path, status: :see_other
   end
