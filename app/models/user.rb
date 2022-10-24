@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
 
   has_one_attached :avatar
-
+  has_many :messages
   after_create :create_profile
 
   private
