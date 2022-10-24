@@ -1,23 +1,28 @@
+<div class="container text-center" >
+  <div class="container chatroom"
+    data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+  >
+    <h1>#<%= @chatroom.name %></h1>
 
-<div class="container chatroom"
-  data-controller="chatroom-subscription"
-  data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
->
-  <h1>#<%= @chatroom.name %></h1>
-
-  <div class="messages" data-chatroom-subscription-target="messages">
-    <% @chatroom.messages.each do |message| %>
-      <div id="message-<%= message.id %>">
-        <small>
-          <strong><%= message.user.nickname %></strong>
-          <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-        </small>
-        <p><%= message.content %></p>
-      </div>
-    <% end %>
+    <div class="messages" data-chatroom-subscription-target="messages">
+      <% @chatroom.messages.each do |message| %>
+        <div id="message-<%= message.id %>">
+          <small>
+            <% if message.user.avatar.present? %>
+              <img src="<%=(url_for(message.user.avatar))%>", class="avatar">
+            <% else %>
+              <%= image_tag "logo.png", class: "avatar" %>
+            <% end %>
+            <strong><%= message.user.nickname %></strong>
+            <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+          </small>
+          <p><%= message.content %></p>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
-
 <%# We want to reset the form after the message has been sent %>
 <%= simple_form_for [@chatroom, @message],
   html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
