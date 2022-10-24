@@ -1,11 +1,7 @@
 <div class="d-flex justify-content-center">
   <div class="row">
-    <h1>user profile <%= @profile.nickname %></h1>
-    <% if current_user == @profile.user %>
-      <%= render(partial: "shared/avatar") %>
-    <% else %>
-      <%= image_tag "defalt.png", class: "avatar" %>
-    <% end %>
+    <h1>user profile <%= @profile.user.nickname %></h1>
+    <img src="<%=(url_for(@profile.user.avatar))%>", class="avatar">
       <p>Batch_number: <%= @profile.batch_number %></p>
       <p>Biography: <%= @profile.biography %></p>
       <p>Contact_info: <%= @profile.contact_info %></p>
