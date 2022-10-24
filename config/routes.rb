@@ -2,7 +2,12 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
   resources :profiles
+
+  #devise_for :users, controller: { sessions: 'users/sessions' }
+  root to: "profiles#index"
+
   devise_for :users
+
   # root to: "users#index"
 
   resources :events
