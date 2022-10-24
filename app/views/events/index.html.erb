@@ -2,7 +2,9 @@
   <div class="events-heading mt-2">
     <h1>Events</h1>
   </div>
-  <%= link_to "Add event", new_event_path, class: "button-primary2" %>
+    <% if policy(Event).new? %>
+      <%= link_to "Add event", new_event_path, class: "button-primary2" %>
+    <% end %>
   <div class="row justify-content-center mt-3">
     <% @events.each do |event| %>
       <div class="grid w-100">
