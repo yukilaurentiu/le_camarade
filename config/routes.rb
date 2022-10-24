@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :profiles
-  devise_for :users, controllers: { sessions: 'users/sessions' }
+  devise_for :users, controller: { sessions: 'users/sessions' }
   root to: "profiles#index"
   # root to: "users#index"
 
