@@ -1,7 +1,7 @@
 class MessagesController < ApplicationController
   skip_after_action :verify_authorized
   skip_after_action :verify_policy_scoped
-  
+
   def create
     @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
