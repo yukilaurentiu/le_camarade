@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   # root to: "users#index"
 
-  resources :events
+  resources :events do
+    resources :event_bookmarks, only: :create
+  end
   resources :compare_users, only: :index
   resources :chatrooms do
     resources :messages, only: :create
