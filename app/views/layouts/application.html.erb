@@ -12,10 +12,12 @@
 
   <body>
   <%# todo %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= render "shared/flashes" %>
-    <%= yield %>
-    <%=render '/components/navbar'%>
+    <div class="main-container">
+      <p class="alert"><%= alert %></p>
+      <%= render "shared/flashes" %>
+      <%= render '/components/navbar' %>
+      <%= yield %>
+       <%= render '/components/footer' %>
+    </div>
   </body>
 </html>

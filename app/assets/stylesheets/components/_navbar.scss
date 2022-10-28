@@ -1,58 +1,18 @@
 
 .top-navbar {
   background-color: #243038;
-  position: absolute;
-  width: 375px;
+  width: 100%;
   height: 76px;
-  left: 0px;
-  top: 0px;
-
-
 }
 
 .project-name {
    color: white;
    text-decoration: none;
-   position: absolute;
   width: 167px;
   height: 27px;
-  left: 20px;
-  top: 24px;
 }
 .project-name:hover {
   color: #495963;
 }
 
-.bottom-navbar {
-  background-color: #243038;
-  position: absolute;
-  width: 375px;
-  height: 73px;
-  left: 0px;
-  bottom: 0px;
 
-}
-.footer-links a{
-  text-decoration: none;
-  margin-left: 5px;
-  margin-bottom: 20px;
-  color: white;
-
-}
-.footer-links i {
-  height: 37px;
-  width: 37px;
-}
-.footer-links{
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  padding: 0px;
-  gap: 60px;
-  position: absolute;
-  width: 320px;
-  height: 35px;
-  left: 31px;
-  bottom: 0px;
-  top: 50px;
-}
