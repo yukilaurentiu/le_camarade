@@ -1,13 +1,15 @@
-<%= simple_form_for @profile do |f| %>
-  <%= f.input :fullname %>
-  <%= f.input :batch_number %>
-  <%= f.input :biography %>
-  <%= f.input :contact_info %>
-  <%= f.input :company %>
-  <%= f.input :location %>
-  <%= f.input :skills %>
-  <%= f.input :hobby %>
-  <%= f.submit "Save" %>
-<% end %>
+<div class="content">
+  <%= simple_form_for @profile do |f| %>
+    <%= f.input :fullname %>
+    <%= f.input :batch_number %>
+    <%= f.input :biography %>
+    <%= f.input :contact_info %>
+    <%= f.input :company %>
+    <%= f.input :location %>
+    <%= f.input :skills %>
+    <%= f.input :hobby %>
+    <%= f.submit "Save" %>
+  <% end %>
 
-<%= link_to profile_path %>
+  <%= link_to profile_path %>
+</div>

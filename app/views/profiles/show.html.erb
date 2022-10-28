@@ -1,24 +1,26 @@
-<div class="d-flex justify-content-center">
-  <div class="row">
-    <h1>user profile <%= @profile.user.nickname %></h1>
-    <% if @profile.user.avatar.present? %>
-      <img src="<%=(url_for(@profile.user.avatar))%>", class="avatar">
-    <% else %>
-      <%= image_tag "logo.png", class: "avatar" %>
-    <% end %>
-        <p>Batch_number: <%= @profile.batch_number %></p>
-        <p>Biography: <%= @profile.biography %></p>
-        <p>Contact_info: <%= @profile.contact_info %></p>
-        <p>Company: <%= @profile.company %></p>
-        <p>Location: <%= @profile.location %></p>
-        <p>Skills: <%= @profile.skills %></p>
-        <p>Hobby: <%= @profile.hobby %></p>
+<div class="content">
+  <div class="d-flex justify-content-center">
+    <div class="row">
+      <h1>user profile <%= @profile.user.nickname %></h1>
+      <% if @profile.user.avatar.present? %>
+        <img src="<%=(url_for(@profile.user.avatar))%>", class="avatar">
+      <% else %>
+        <%= image_tag "logo.png", class: "avatar" %>
+      <% end %>
+          <p>Batch_number: <%= @profile.batch_number %></p>
+          <p>Biography: <%= @profile.biography %></p>
+          <p>Contact_info: <%= @profile.contact_info %></p>
+          <p>Company: <%= @profile.company %></p>
+          <p>Location: <%= @profile.location %></p>
+          <p>Skills: <%= @profile.skills %></p>
+          <p>Hobby: <%= @profile.hobby %></p>
+    </div>
   </div>
-</div>
 
-<div class="col align-self-end">
-  <% if policy(@profile).edit? %>
-    <%= link_to "Update", edit_profile_path(@profile) %>
-  <% end %>
-    <%= link_to "back", profiles_path %>
+  <div class="col align-self-end">
+    <% if policy(@profile).edit? %>
+      <%= link_to "Update", edit_profile_path(@profile) %>
+    <% end %>
+      <%= link_to "back", profiles_path %>
+  </div>
 </div>
