@@ -1,6 +1,23 @@
 <div class="home-container">
   <div class="content">
-    <h1>Events</h1>
+    <div class="event-header-container">
+      <h1>Events</h1>
+      <%= link_to "<button>Add event</button>".html_safe, new_event_path, :id => "button_id", :class => "button_class" if policy(Event).new? %>
+    </div>
+    <div class="event-container">
+      <% @events = Event.all %>
+      <% @events.each do |event| %>
+        <%#= render event %>
+        <div class="event-name-container" id="#{event_id}">
+          <p><%= event.event_name %></p>
+          <%= link_to "<button>See more!</button>".html_safe, event_path(event), :id => "button_id", :class => "button_class" %>
+        </div>
+      <% end %>
+    </div>
+
+<%# <div class="home-container">
+  <div class="content">
+    <h2>Events</h2>
     <div class="event-container" id="first">
       <div class="event-name-container">
         <p>Event Name</p>
@@ -14,7 +31,7 @@
         <p>Event Name</p>
         <button type="button">See more!</button>
       </div>
-    </div>
+    </div> %>
 
     <div class="main-container-second">
     <h1>Your Buddies</h1>
@@ -31,8 +48,8 @@
         <p>User Name</p>
         <button type="button">See more!</button>
       </div>
-      </div>
     </div>
+   </div>
 
 <div class="container text-center">
   <%= link_to "signin", new_user_registration_path %>

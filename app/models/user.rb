@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_one :profile, dependent: :destroy
   has_many :events, dependent: :destroy
+  has_many :event_bookmarks, dependent: :destroy
 
   has_one_attached :avatar
   has_many :messages

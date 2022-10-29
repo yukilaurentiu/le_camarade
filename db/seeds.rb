@@ -36,6 +36,14 @@ event = Event.create!(
   end_time: Faker::Date.between(from: '2022-11-22', to: '2022-11-23')
 )
 event.save!
+event = Event.create!(
+  event_name: "Le Wagon Chill Lounge",
+  location: "Balanstraße 73 Haus 21A, 4. Stock, 81541 München",
+  user_id: user.id,
+  start_time: Faker::Date.between(from: '2022-11-23', to: '2022-11-24'),
+  end_time: Faker::Date.between(from: '2022-11-25', to: '2022-11-26')
+)
+event.save!
 # puts event ####
 # puts "#{event.event_name}" ####
 # puts "#{event.location}" ####
@@ -44,3 +52,13 @@ event.save!
 # puts "#{event.end_time}" ####
 puts "Events finished!"
 # End of: event seeds
+
+# Start of: event_bookmark seeds
+puts "Create one Event Bookmark!"
+event_bookmark_1 = EventBookmark.create!(
+  event_id: event.id,
+  user_id: user.id,
+  comment: "This is a cool event. I like it."
+)
+puts "Event Bookmarks finished!"
+# End of: event_bookmark seeds

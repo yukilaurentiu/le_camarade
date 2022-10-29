@@ -7,6 +7,7 @@
         <%= link_to "Add event", new_event_path, class: "button-primary2" %>
       <% end %>
     <div class="row justify-content-center mt-3">
+      <% @events = Event.all %>
       <% @events.each do |event| %>
         <div class="grid w-100">
           <div class="g-col-3">
