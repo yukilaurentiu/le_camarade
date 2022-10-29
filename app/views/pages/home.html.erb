@@ -1,6 +1,6 @@
 <div class="home-container">
   <div class="content">
-    <h2>Events</h2>
+    <h1>Events</h1>
     <div class="event-container" id="first">
       <div class="event-name-container">
         <p>Event Name</p>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="main-container-second">
-    <h2>Your Buddies</h2>
+    <h1>Your Buddies</h1>
     <div class="buddy-container" id="first">
       <div class="event-name-container">
         <p>User Name</p>
@@ -33,10 +33,14 @@
       </div>
       </div>
     </div>
-  </div>
-</div>
 
 <div class="container text-center">
   <%= link_to "signin", new_user_registration_path %>
-  <%= link_to "logout", destroy_user_session_path, data: {turbo_method: :delete} %>
+  <%= button_to(
+                      "Log Out",
+                      destroy_user_session_path,
+                      method: :delete
+                     ) %>
+  </div>
+</div>
 </div>

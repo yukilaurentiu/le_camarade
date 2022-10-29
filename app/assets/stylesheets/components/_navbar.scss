@@ -6,13 +6,24 @@
 }
 
 .project-name {
-   color: white;
-   text-decoration: none;
-  width: 167px;
-  height: 27px;
+  color: white;
+  margin-bottom: 0;
+  text-decoration: none;
+  float: left;
 }
 .project-name:hover {
   color: #495963;
 }
 
+.dropdown-menu {
+  --bs-dropdown-min-width: 6rem;
+}
 
+.navbar-pages .navbar-collapse {
+  flex-grow: 0;
+}
+
+.login-button {
+  cursor: pointer;
+  float: right;
+}
