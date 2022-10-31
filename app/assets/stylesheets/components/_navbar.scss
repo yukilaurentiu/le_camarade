@@ -1,18 +1,44 @@
-
 .top-navbar {
+  display: flex;
   background-color: #243038;
   width: 100%;
   height: 76px;
 }
 
 .project-name {
-   color: white;
-   text-decoration: none;
-  width: 167px;
-  height: 27px;
+  color: white;
+  margin-bottom: 0;
+  text-decoration: none;
+  float: left;
 }
 .project-name:hover {
   color: #495963;
 }
 
+.dropdown-menu {
+  --bs-dropdown-min-width: 6rem;
+}
 
+.navbar-pages .navbar-collapse {
+  flex-grow: 0;
+}
+
+.login-button {
+  cursor: pointer;
+  float: right;
+}
+
+.avatar-item {
+  margin-top: 10px;
+}
+
+@include media-breakpoint-up(xs) {
+  .collapse {
+    display: block;
+  }
+
+  .navbar-expand-sm .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+}

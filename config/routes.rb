@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   # root to: "profiles#index"
 
   devise_for :users
-
   # root to: "users#index"
 
   resources :events do
