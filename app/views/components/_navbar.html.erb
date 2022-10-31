@@ -1,4 +1,4 @@
-<nav class="container-fluid top-navbar  navbar-expand-sm d-flex justify-content-between">
+<nav class="container-fluid top-navbar navbar-expand-sm d-flex justify-content-between">
 
   <div class="top-navbar">
     <a href="/" class="project-name">
@@ -7,9 +7,6 @@
   </div>
 
   <div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
@@ -24,8 +21,10 @@
           </a>
           <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <%= link_to "Log in", new_user_session_path, class: "dropdown-item", id: "dropdown-item" %>
+          <%= link_to "Sign in", new_user_registration_path, class: "dropdown-item", id: "dropdown-item" %>
         <% end %>
         </ul>
       </ul>
+    </div>
   </div>
 </nav>
