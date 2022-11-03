@@ -3,6 +3,11 @@
 body {
   margin: 0;
   padding: 0;
+  background: $powder;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
 }
 
 .main-container {
@@ -26,7 +31,7 @@ body {
 .event-container {
   border: 1px solid black;
   border-radius: 5px;
-  background:  #ACBCC7;
+  background:  $baby-pink;
   width: 340px;
   // height: 200px;
   top: 219px;
@@ -34,7 +39,7 @@ body {
 .buddy-container {
   border: 1px solid black;
   border-radius: 5px;
-  background:  #F9D1B3;
+  background:  $champagne;
   width: 340px;
   // height: 200px;
   margin-top: 10px;
@@ -53,7 +58,7 @@ body {
   margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: #FFFFFF;
+  background-color: $powder;
 }
 .event-header-container {
   border-radius: 5px;
@@ -64,7 +69,7 @@ body {
   margin-bottom: 20px;
 }
 .event-name-container button{
-  color: white;
+  color: $powder;
 }
 .event-name-container p{
   margin-top: 10px;
@@ -72,13 +77,13 @@ body {
 }
 
 button {
-  color: white;
+  color: $powder;
   border: 1px solid black;
   border-radius: 5px;
   width: fit-content;
   height: 35px;
   left: 263px;
-  background: #EC5444;
+  background: $pink;
   margin-top: 5px;
   margin-right: 5px;
 }
