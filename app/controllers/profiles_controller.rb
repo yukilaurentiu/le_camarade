@@ -1,7 +1,17 @@
 class ProfilesController < ApplicationController
   def index
     @profile = policy_scope(Profile)
-    @profiles = Profile.all
+    # if params[:query].present?
+    #   @profiles = Profile.where("fullname ILIKE ? OR skills ILIKE ?", "%#{params[:query]}%", "%#{params[:query]}%")
+    if params[:query].present?
+      sql_query = <<~SQL
+        profiles.fullname ILIKE :query
+        OR profiles.skills ILIKE :query
+      SQL
+      @profiles = Profile.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @profiles = Profile.all
+    end
   end
 
   def show
@@ -10,7 +20,6 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    redirect_to root_path unless current_user
     @profile = Profile.find(params[:id])
     authorize @profile
   end
