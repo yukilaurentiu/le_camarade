@@ -1,22 +1,31 @@
-<nav class="container-fluid top-navbar navbar-expand-sm d-flex justify-content-between">
-
-  <div class="top-navbar">
+<nav class="top-navbar navbar-expand-sm d-flex justify-content-between">
+  <div>
     <a href="/" class="project-name">
-      <h2>Le Camarede</h2>
+     <%=  image_tag("image.png", alt: "Logo", class: "logo") %>
     </a>
   </div>
 
+  <div class="navbar-item" >
+    <%= form_with url: profiles_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a buddy!"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
   <div>
     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <a class="nav-link avatar-item" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link navbar-item" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= render(partial: "components/avatar") %>
           </a>
           <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item", id: "dropdown-item" %>
         <% else %>
-          <a class="nav-link avatar-item" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a class="nav-link navbar-item" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= render(partial: "components/avatar") %>
           </a>
           <ul class="dropdown-menu dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
