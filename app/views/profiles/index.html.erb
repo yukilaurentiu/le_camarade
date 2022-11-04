@@ -1,13 +1,36 @@
-<div class="content">
-  <div class="container text-center">
+<div class="container">
+  <div class="content">
     <h1>Profile</h1>
-      <ul>
+      <div>
+        <% color_count = 0 %>
         <% @profiles.each do |profile| %>
-          <%= link_to profile_path(profile) do %>
-            <h2 class="mb-1"><%= profile.id%></h2>
+
+          <% color_count += 1 %>
+          <% if color_count.odd?  %>
+            <div class="card-container card-container-one position-relative">
+          <% else %>
+            <div class="card-container card-container-two position-relative">
           <% end %>
-      </ul>
-    <%= profile.user.nickname %>
-    <% end %>
+
+          <div class="inside-container">
+            <div class="avatar-container">
+              <img src="<%=(url_for(profile.user.avatar))%>", class="card-avatar">
+            </div>
+
+
+            <%= link_to profile_path(profile) do %>
+              <div class="mb-1 stretched-link"> </div>
+            <% end %>
+
+
+
+            <div class="name-container">
+              <h3><strong> <%= profile.user.nickname.upcase %> </strong></h3>
+              <p class="mb-1" >Batch number: <%= profile.batch_number %> </p>
+            </div>
+          </div>
+
+        </div>
+      <% end %>
   </div>
 </div>
