@@ -1,0 +1,38 @@
+.card-container {
+  margin-bottom: 20px;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-container-one {
+  background-color: $champagne;
+  border: 1px solid black;
+}
+
+.card-container-two {
+  background-color: $baby-pink;
+  border: 1px solid black;
+}
+
+.card-avatar {
+  width: 70px;
+  border-radius: 15px;
+}
+
+.avatar-container {
+  margin: 20px;
+  border-radius: 15px;
+}
+
+.inside-container {
+  background-color: $powder;
+  border-radius: 5px;
+  width: 298px;
+  display: flex;
+  margin: 10px 20px 10px 20px;
+}
+
+.name-container{
+  margin-top: 20px;
+}

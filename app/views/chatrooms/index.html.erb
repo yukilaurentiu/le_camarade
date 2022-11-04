@@ -1,14 +1,29 @@
-<div class="content">
-  <div class="container text-center">
+<div class="container">
+  <div class="content">
     <h1>Chatrooms</h1>
-      <ul>
-        <% @chatrooms.each do |chatroom| %>
-          <%= link_to chatroom_path(chatroom) do %>
-            <h2 class="mb-1"><%= chatroom.name%></h2>
-          <% end %>
-        <% end %>
-      </ul>
+        <div>
+          <% color_count = 0 %>
+          <% @chatrooms.each do |chatroom| %>
 
-    <%= link_to "start chat", new_chatroom_path %>
+            <% color_count += 1 %>
+            <% if color_count.odd?  %>
+              <div class="card-container card-container-one position-relative">
+            <% else %>
+              <div class="card-container card-container-two position-relative">
+            <% end %>
+
+            <div class="chat">
+              <%= link_to chatroom_path(chatroom) do %>
+                <div class="mb-1 stretched-link"></div>
+              <% end %>
+
+              <div class="name-container">
+                <h3><strong> <%= chatroom.name.upcase %> </strong></h3>
+              </div>
+            </div>
+
+            </div>
+          <% end %>
+      <%= link_to "<button>Start Chat</button>".html_safe,new_chatroom_path, class: "button_class" %>
   </div>
 </div>
