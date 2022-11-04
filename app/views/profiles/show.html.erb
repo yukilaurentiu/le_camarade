@@ -17,10 +17,10 @@
     </div>
   </div>
 
-  <div class="col align-self-end">
+  <div>
     <% if policy(@profile).edit? %>
-      <%= link_to "Update", edit_profile_path(@profile) %>
+      <%= link_to "Update", edit_profile_path(@profile), class: "btn-orange" %>
     <% end %>
-      <%= link_to "back", profiles_path %>
+      <%= link_to "back", profiles_path, class: "btn-orange" %>
   </div>
 </div>

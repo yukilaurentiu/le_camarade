@@ -2,7 +2,10 @@
   <div class="container text-center" >
     <%= simple_form_for(@chatroom) do |f| %>
     <%= f.input :name %>
-    <%= f.button :submit, "create chatroom" %>
+    <%= f.submit "create chatroom", class: "btn-submit" %>
     <% end %>
   </div>
+   <div>
+      <%= link_to "back", chatrooms_path, class: "btn-orange" %>
+    </div>
 </div>

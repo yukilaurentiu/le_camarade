@@ -1,6 +1,5 @@
-<div class="content">
-  <div class="container text-center" >
-    <div class="container chatroom" style="width: 70%"
+<div class="container">
+    <div class="content" style="width: 70%"
       data-controller="chatroom-subscription"
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
       <h1>#<%= @chatroom.name %></h1>
@@ -17,18 +16,19 @@
     </div>
   </div>
   <%# We want to reset the form after the message has been sent %>
-  <%= simple_form_for [@chatroom, @message],
-    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
-  %>
-    <%= f.input :content,
-      label: false,
-      placeholder: "Message in ##{@chatroom.name}",
-      wrapper_html: {class: "flex-grow-1"}
+  <div class="message-container">
+    <%= simple_form_for [@chatroom, @message],
+      html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
     %>
-    <%= f.submit "Send", class: "btn btn-primary mb-3" %>
-  <% end %>
-
-  <div class="container text-center">
-    <%= link_to "back", chatrooms_path %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Message in ##{@chatroom.name}",
+        wrapper_html: {class: "flex-grow-1"}
+      %>
+      <%= f.submit "Send", class: "btn-submit" %>
+    <% end %>
+    <div class="text-center">
+      <%= link_to "back", chatrooms_path, class: "btn-orange" %>
+    </div>
   </div>
 </div>

@@ -18,6 +18,10 @@
                 <img src="<%=(url_for(event.user.avatar))%>", class="card-avatar">
               </div>
 
+      
+              <%= link_to event_path(event) do %>
+                <div class="mb-1 stretched-link"></div>
+              <% end %>
 
             <div class="name-container">
               <h3><strong> <%= event.event_name.upcase %> </strong></h3>
@@ -30,7 +34,7 @@
         <% end %>
 
         <% if policy(Event).new? %>
-          <%= link_to "<button>Add event</button>".html_safe, new_event_path, class: "button-class" %>
+          <%= link_to "Add event", new_event_path, class: "btn-pink" %>
         <% end %>
     <%#= link_to "New event bookmark", new_event_bookmark_path %>
     <%#= link_to "Go to event bookmarks ", event_bookmarks_path %>
