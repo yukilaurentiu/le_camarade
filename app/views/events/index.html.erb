@@ -1,24 +1,37 @@
-<div class="content">
-  <div class="event-index-container">
-    <div class="events-heading mt-2">
+<div class="container">
+  <div class="content">
       <h1>Events</h1>
-    </div>
-      <% if policy(Event).new? %>
-        <%= link_to "Add event", new_event_path, class: "button-primary2" %>
-      <% end %>
-    <div class="row justify-content-center mt-3">
-      <% @events = Event.all %>
-      <% @events.each do |event| %>
-        <div class="grid w-100">
-          <div class="g-col-3">
-            <%= render event %>
-          </div>
-        </div>
-        <div class="border-div">
-        </div>
-      <% end %>
-    </div>
+        <div>
+          <% color_count = 0 %>
+          <% @events.each do |event| %>
 
+            <% color_count += 1 %>
+            <% if color_count.odd?  %>
+              <div class="card-container card-container-one position-relative">
+            <% else %>
+              <div class="card-container card-container-two position-relative">
+            <% end %>
+
+
+            <div class="inside-container">
+              <div class="avatar-container">
+                <img src="<%=(url_for(event.user.avatar))%>", class="card-avatar">
+              </div>
+
+
+            <div class="name-container">
+              <h3><strong> <%= event.event_name.upcase %> </strong></h3>
+              <p class="mb-1" >When: <%= event.start_time %> </p>
+              <p class="mb-1" >Host: <%= event.user.nickname %> </p>
+            </div>
+          </div>
+
+          </div>
+        <% end %>
+
+        <% if policy(Event).new? %>
+          <%= link_to "<button>Add event</button>".html_safe, new_event_path, class: "button-class" %>
+        <% end %>
     <%#= link_to "New event bookmark", new_event_bookmark_path %>
     <%#= link_to "Go to event bookmarks ", event_bookmarks_path %>
 
