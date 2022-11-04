@@ -9,28 +9,24 @@
           <p> <%= "Email adress of event founder: " %><%= @event.user.email %>.</p>
           <p> <%= @event.start_time %>.</p>
           <p> <%= @event.end_time %>.</p><br>
-          <div class="d-flex price-book">
-            <div class="btn btn-warning">
-              <%= link_to "🔙", events_path %>
-            </div>
+
+              <%= link_to "back", events_path, class: "btn-orange" %>
             <% if current_user == @event.user %>
               <div class="d-flex p-2">
                 <div style="margin: 10px 0 0 10px;;">
-                  <div class="btn btn-warning">
+                  
                   <% if policy(@event).edit? %>
-                    <%= link_to "Edit", edit_event_path(@event) %>
+                    <%= link_to "Edit", edit_event_path(@event), class: "btn-pink" %>
                   <% end %>
-                  </div>
-                  <div class="btn btn-warning">
+
                     <%#= link_to "🗑️", event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
                     <%= button_to "🗑️", @event, method: :delete if policy(@event).destroy? %>
-                  </div>
+
                 </div>
               </div>
             <% else %>
             <%#= link_to "📖 Book", new_event_bookmark_path(@event), class: "btn button-primary2"%>
             <% end %>
-          </div>
         </div>
       </div>
     </div>

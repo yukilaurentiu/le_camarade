@@ -10,7 +10,7 @@
       <% events.each do |event| %>
         <div class="event-name-container" id="#{event_id}">
           <p><%= event.event_name %></p>
-          <%= link_to "<button>See more!</button>".html_safe, event_path(event), :id => "button_id", :class => "button_class" %>
+          <%= link_to "<button>See more!</button>".html_safe, event_path(event), :class => "button_class" %>
         </div>
       <% end %>
     </div>

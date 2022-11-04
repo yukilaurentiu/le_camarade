@@ -1,0 +1,57 @@
+button {
+  color: $powder;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: fit-content;
+  height: 35px;
+  left: 263px;
+  background: $pink;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+.btn-submit {
+  color: $powder;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: $pink;
+  height: 40px;
+
+  &:hover {
+    opacity: 0.8;
+    color: $powder;
+  }
+}
+
+.btn-pink {
+  color: $powder;
+  width: 60px;
+  padding: 6px 10px 6px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: $pink;
+  height: 35px;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.8;
+    color: $powder;
+  }
+}
+
+.btn-orange {
+  color: $powder;
+  width: 60px;
+  padding: 6px 10px 6px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background: $tangerine;
+  height: 35px;
+  text-decoration: none;
+
+
+  &:hover {
+    opacity: 0.8;
+    color: $powder;
+  }
+}

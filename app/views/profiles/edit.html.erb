@@ -8,8 +8,11 @@
     <%= f.input :location %>
     <%= f.input :skills %>
     <%= f.input :hobby %>
-    <%= f.submit "Save" %>
+    <%= f.submit "Save", class: "btn-submit"%>
   <% end %>
 
-  <%= link_to profile_path %>
+  <div>
+    <%= link_to "back", profiles_path, class: "btn-orange" %>
+  </div>
+  
 </div>
