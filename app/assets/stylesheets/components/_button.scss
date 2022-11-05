@@ -55,3 +55,20 @@ button {
     color: $powder;
   }
 }
+
+.btn-square {
+  color: $powder;
+  border: 1px solid black;
+  background: $pink;
+  height: 40px;
+  padding: 0 15px 0 15px;
+
+  &:hover {
+    opacity: 0.8;
+    color: $powder;
+  }
+}
+
+.button-container {
+  margin-top: 50px;
+}

@@ -1,7 +1,7 @@
 <div class="content">
   <div class="d-flex justify-content-center">
     <div class="row">
-      <h1>user profile <%= @profile.user.nickname %></h1>
+      <h1> <%= @profile.user.nickname %></h1>
       <% if @profile.user.avatar.present? %>
         <img src="<%=(url_for(@profile.user.avatar))%>", class="avatar">
       <% else %>
@@ -17,7 +17,7 @@
     </div>
   </div>
 
-  <div>
+  <div class="button-container">
     <% if policy(@profile).edit? %>
       <%= link_to "Update", edit_profile_path(@profile), class: "btn-orange" %>
     <% end %>
