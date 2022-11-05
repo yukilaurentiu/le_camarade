@@ -16,3 +16,13 @@
   height: 150px;
   margin-top: 100px;
 }
+
+.message-content {
+  width: 100%
+}
+
+@include media-breakpoint-up(md) {
+  .message-content  {
+    width: 70%
+  }
+}
