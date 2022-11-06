@@ -1,11 +1,15 @@
 <div class="container">
   <div class="content">
-    <h1>Events 📅</h1>
     <h1> <%= @event.event_name %></h1><br>
-    <p> <%= @event.location %>.</p>
-    <p> <%= "Email adress of event founder: " %><%= @event.user.email %>.</p>
-    <p> <%= @event.start_time %>.</p>
-    <p> <%= @event.end_time %>.</p><br>
+    <p> Location: <%= @event.location %></p>
+    <p> <%= "Email adress of event founder: " %><%= @event.user.email %></p>
+      <% if @event.start_time.strftime("%a, %d %b %Y") != @event.end_time.strftime("%a, %d %b %Y") %>
+        <p> Start Date: <%= @event.start_time %></p>
+        <p> End Date: <%= @event.end_time %></p>
+      <% else %>
+        <p> Date: <%= @event.start_time %></p>
+      <% end %>
+
 
     <div>
       <%= link_to "back", events_path, class: "btn btn-orange" %>
@@ -13,12 +17,10 @@
         <% if policy(@event).edit? %>
           <%= link_to "Edit", edit_event_path(@event), class: "btn btn-orange" %>
         <% end %>
-
-          <%#= link_to "🗑️", event_path(@event), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
-          <%= button_to "🗑️", @event, method: :delete if policy(@event).destroy? %>
-        <% else %>
-        <%#= link_to "📖 Book", new_event_bookmark_path(@event), class: "btn button-primary2"%>
-        <% end %>
+          <%= link_to icon('fa-solid', 'trash'), event_path(@event), class: "btn btn-orange", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+      <% else %>
+      <%#= link_to "📖 Book", new_event_bookmark_path(@event), class: "btn button-primary2"%>
+      <% end %>
 
     </div>
   </div>
