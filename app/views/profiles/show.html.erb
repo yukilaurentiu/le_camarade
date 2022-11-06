@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="contant">
-      <h1>user profile <%= @profile.user.nickname %></h1>
+  <div class="content">
+    <h1>user profile <%= @profile.user.nickname %></h1>
       <div>
         <% if @profile.user.avatar.present? %>
           <img src="<%=(url_for(@profile.user.avatar))%>", class="avatar">
@@ -15,8 +15,8 @@
             <p>Skills: <%= @profile.skills %></p>
             <p>Hobby: <%= @profile.hobby %></p>
       </div>
-      
-    <div class="buttons-container">
+
+    <div class="button-container">
       <%= link_to "back", profiles_path, class: "btn btn-orange" %>
       <% if policy(@profile).edit? %>
         <%= link_to "Update", edit_profile_path(@profile), class: "btn btn-orange" %>

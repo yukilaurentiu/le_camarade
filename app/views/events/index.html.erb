@@ -33,7 +33,7 @@
         </div>
       <% end %>
 
-      <div class="new">
+      <div class="button-container">
         <% if policy(Event).new? %>
           <%= link_to "Add event", new_event_path, class: "btn btn-pink" %>
         <% end %>

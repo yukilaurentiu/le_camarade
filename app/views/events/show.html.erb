@@ -10,17 +10,21 @@
         <p> Date: <%= @event.start_time %></p>
       <% end %>
 
-
-    <div class="new">
-      <%= link_to "back", events_path, class: "btn btn-orange" %>
-      <% if current_user == @event.user %>
-        <% if policy(@event).edit? %>
-            <%= link_to "Edit", edit_event_path(@event), class: "btn btn-orange" %>
+      <div class="button-container">
+        <% if current_user == @event.user %>
+          <% if policy(@event).edit? %>
+              <%= link_to "Edit", edit_event_path(@event), class: "btn btn-orange" %>
+          <% end %>
+              <%= link_to icon('fa-solid', 'trash'), event_path(@event), class: "btn btn-orange", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+        <% else %>
+        <%#= link_to "📖 Book", new_event_bookmark_path(@event), class: "btn button-primary2"%>
         <% end %>
-            <%= link_to icon('fa-solid', 'trash'), event_path(@event), class: "btn btn-orange", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-      <% else %>
-      <%#= link_to "📖 Book", new_event_bookmark_path(@event), class: "btn button-primary2"%>
-      <% end %>
+      </div>
+
+      <div class="button-container">
+      <%= link_to "back", events_path, class: "btn btn-orange" %>
+      </div>
+
     </div>
   </div>
 </div>
