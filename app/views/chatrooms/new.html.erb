@@ -5,11 +5,11 @@
       <%= simple_form_for(@chatroom) do |f| %>
       <%= f.input :name, label: false, placeholder: "give a chatroom name..."%>
       <div class="button-container">
-        <%= f.submit "create chatroom", class: "btn-submit" %>
+        <%= f.submit "create chatroom", class: "btn btn-pink" %>
       <% end %>
-      <%= link_to "back", chatrooms_path, class: "btn-orange" %>
+      <%= link_to "back", chatrooms_path, class: "btn btn-orange" %>
       </div>
     </div>
-    
+
   </div>
 </div>
