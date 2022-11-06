@@ -1,19 +1,12 @@
-<div class="content">
-  <div class= "container text-align-center">
-    <div class= "row justify-content-center">
-      <div class= "col-6 mt-2">
-      <div class="header" style="text-align: center; margin-top: 8px;">
+<div class="container">
+  <div class= "content">
         <h1>Add a new Event</h1>
-         <%= render "form", event: @event %>
-      </div>
+            <%= render "form", event: @event %>
 
             <%# <%= f.input :country, %>
               <%# input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
               wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}}
             %>
             <%#= f.association :users, as: :check_boxes %>
-          </div>
-      </div>
-    </div>
   </div>
 </div>

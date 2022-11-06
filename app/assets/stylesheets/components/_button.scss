@@ -1,62 +1,53 @@
-button {
-  color: $powder;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: fit-content;
-  height: 35px;
-  left: 263px;
-  background: $pink;
-  margin-top: 5px;
-  margin-right: 5px;
+.buttons-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
 }
 
-.btn-submit {
-  color: $powder;
-  border: 1px solid black;
-  border-radius: 5px;
-  background: $pink;
-  height: 40px;
-
-  &:hover {
-    opacity: 0.8;
-    color: $powder;
-  }
+.button-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
-.btn-pink {
+.log-in {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn.btn-pink {
   color: $powder;
-  width: 60px;
-  padding: 6px 10px 6px 10px;
   border: 1px solid black;
   border-radius: 5px;
-  background: $pink;
-  height: 35px;
+  background-color: $pink;
   text-decoration: none;
 
   &:hover {
-    opacity: 0.8;
     color: $powder;
+    opacity: 0.8;
+    background-color: $pink;
+    border: 1px solid black;
   }
 }
 
-.btn-orange {
-  color: $powder;
-  width: 60px;
-  padding: 6px 10px 6px 10px;
-  border: 1px solid black;
+.btn.btn-orange {
+  color: $tangerine;
+  border: 1px solid $tangerine;
   border-radius: 5px;
-  background: $tangerine;
-  height: 35px;
+  background-color: $powder;
   text-decoration: none;
 
-
   &:hover {
-    opacity: 0.8;
-    color: $powder;
+    color: $tangerine;
+    opacity: 0.5;
+    background-color: $powder;
+    border: 1px solid $tangerine;
   }
 }
 
-.btn-square {
+.btn.btn-square {
   color: $powder;
   border: 1px solid black;
   background: $pink;
@@ -64,11 +55,9 @@ button {
   padding: 0 15px 0 15px;
 
   &:hover {
-    opacity: 0.8;
     color: $powder;
+    opacity: 0.8;
+    background-color: $pink;
+    border: 1px solid black;
   }
-}
-
-.button-container {
-  margin-top: 50px;
 }

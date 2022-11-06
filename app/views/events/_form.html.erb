@@ -8,8 +8,9 @@
     <%= f.input :start_time %>
     <%= f.input :end_time %>
 
-  <div class="button-container">
-    <%= f.submit "submit", class: 'btn-submit' %>
+  <div class="buttons-container">
+    <%= link_to "back", events_path, class: "btn btn-orange" %>
+    <%= f.submit "submit", class: 'btn btn-pink' %>
 
 <% end %>
   </div>

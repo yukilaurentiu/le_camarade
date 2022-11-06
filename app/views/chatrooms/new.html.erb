@@ -1,11 +1,15 @@
-<div class="content">
-  <div class="container text-center" >
-    <%= simple_form_for(@chatroom) do |f| %>
-    <%= f.input :name %>
-    <%= f.submit "create chatroom", class: "btn-submit" %>
-    <% end %>
-  </div>
-    <div class="button-container">
-      <%= link_to "back", chatrooms_path, class: "btn-orange" %>
+<div class="container">
+  <div class="content">
+    <h1> Create chatroom </h1>
+    <div>
+      <%= simple_form_for(@chatroom) do |f| %>
+      <%= f.input :name, label: false, placeholder: "give a chatroom name..."%>
+      <div class="buttons-container">
+        <%= link_to "back", chatrooms_path, class: "btn btn-orange" %>
+        <%= f.submit "create chatroom", class: "btn btn-pink" %>
+      <% end %>
+      </div>
     </div>
+
+  </div>
 </div>

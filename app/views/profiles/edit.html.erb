@@ -1,19 +1,21 @@
-<div class="content">
-  <%= simple_form_for @profile do |f| %>
-    <%= f.input :fullname %>
-    <%= f.input :batch_number %>
-    <%= f.input :biography %>
-    <%= f.input :contact_info %>
-    <%= f.input :company %>
-    <%= f.input :location %>
-    <%= f.input :skills %>
-    <%= f.input :hobby %>
-    
-    <div class="button-container">
-    <%= f.submit "Save", class: "btn-submit"%>
-  <% end %>
+<div class="container">
+  <div class="content">
+    <h1>Edit your profile</h1>
+    <%= simple_form_for @profile do |f| %>
+      <%= f.input :fullname %>
+      <%= f.input :batch_number %>
+      <%= f.input :biography %>
+      <%= f.input :contact_info %>
+      <%= f.input :company %>
+      <%= f.input :location %>
+      <%= f.input :skills %>
+      <%= f.input :hobby %>
 
-    <%= link_to "back", profiles_path, class: "btn-orange" %>
+      <div class="buttons-container">
+      <%= link_to "back", profiles_path, class: "btn btn-orange" %>
+      <%= f.submit "Save", class: "btn btn-pink"%>
+    <% end %>
+      </div>
+
   </div>
-
 </div>

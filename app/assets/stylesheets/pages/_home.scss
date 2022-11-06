@@ -65,14 +65,24 @@ h1 {
   margin-left: 5px;
 }
 
-button {
-  color: $powder;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: fit-content;
-  height: 35px;
-  left: 263px;
-  background: $pink;
-  margin-top: 5px;
+.see-more {
+  margin-top: 6px;
   margin-right: 5px;
 }
+
+.link {
+  margin-top: 20px;
+}
+
+
+// button {
+//   color: $powder;
+//   border: 1px solid black;
+//   border-radius: 5px;
+//   width: fit-content;
+//   height: 35px;
+//   left: 263px;
+//   background: $pink;
+//   margin-top: 5px;
+//   margin-right: 5px;
+// }
