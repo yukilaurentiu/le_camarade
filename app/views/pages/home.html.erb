@@ -10,7 +10,7 @@
       <% events.each do |event| %>
         <div class="event-name-container" id="#{event_id}">
           <p><%= event.event_name %></p>
-          <div>
+          <div class="see-more">
             <%= link_to "See more!", event_path(event), class: "btn btn-pink"%>
           </div>
         </div>
@@ -26,7 +26,7 @@
       <% profiles.each do |profile| %>
         <div class="event-name-container" id="#{profile_id}">
           <p><%= profile.user.nickname %></p>
-          <div>
+          <div class="see-more">
             <%= link_to "See more!", profile_path(profile), class: "btn btn-pink"%>
           </div>
         </div>
