@@ -6,9 +6,9 @@
     </div>
     <div class="event-container">
       <% @events = Event.all %>
-      <% events= @events.sample(3)     %>
+      <% events= @events.sample(3) %>
       <% events.each do |event| %>
-        <div class="event-name-container" id="#{event_id}">
+        <div class="event-name-container">
           <p><%= event.event_name %></p>
           <div class="see-more">
             <%= link_to "See more!", event_path(event), class: "btn btn-pink"%>
@@ -22,9 +22,9 @@
     </div>
     <div class="buddy-container">
       <% @profiles = Profile.all %>
-      <% profiles= @profiles.sample(3)     %>
+      <% profiles= @profiles.sample(3) %>
       <% profiles.each do |profile| %>
-        <div class="event-name-container" id="#{profile_id}">
+        <div class="event-name-container" >
           <p><%= profile.user.nickname %></p>
           <div class="see-more">
             <%= link_to "See more!", profile_path(profile), class: "btn btn-pink"%>
