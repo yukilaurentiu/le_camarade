@@ -1,19 +1,18 @@
-button {
-  color: $powder;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: fit-content;
-  height: 35px;
-  left: 263px;
-  background: $pink;
-  margin-top: 5px;
-  margin-right: 5px;
-}
-
-.btn-container {
+.buttons-container {
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
+}
+
+.button-container {
+  margin-top: 50px;
+}
+
+.log-in {
+  margin-top: 50px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .btn.btn-pink {
