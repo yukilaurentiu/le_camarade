@@ -1,0 +1,31 @@
+h5 {
+  background-color: $light-blue;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.profile-content {
+  text-align: left;
+}
+
+.avatar-content {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.profile-avatar {
+  width: 100px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.batch-container {
+ background-color: #fdbe9b;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+p {
+  margin-bottom: 5px;
+}

@@ -1,19 +1,32 @@
 <div class="container">
   <div class="content">
-    <h1>user profile <%= @profile.user.nickname %></h1>
-      <div>
-        <% if @profile.user.avatar.present? %>
-          <img src="<%=(url_for(@profile.user.avatar))%>", class="avatar">
-        <% else %>
-          <%= image_tag "logo.png", class: "avatar" %>
-        <% end %>
-            <p>Batch_number: <%= @profile.batch_number %></p>
-            <p>Biography: <%= @profile.biography %></p>
-            <p>Contact_info: <%= @profile.contact_info %></p>
-            <p>Company: <%= @profile.company %></p>
-            <p>Location: <%= @profile.location %></p>
-            <p>Skills: <%= @profile.skills %></p>
-            <p>Hobby: <%= @profile.hobby %></p>
+    <h1>Hello, I am <%= @profile.user.nickname.upcase %> 🌱</h1>
+    <div class="avatar-content">
+      <% if @profile.user.avatar.present? %>
+        <img src="<%=(url_for(@profile.user.avatar))%>", class="profile-avatar">
+      <% else %>
+        <%= image_tag "logo.png", class: "card-avatar" %>
+      <% end %>
+      <div><p>Batch number</p> <div class="batch-container"><%= @profile.batch_number %> </div></div>
+    </div>
+
+      <div class="profile-content">
+
+        <p>Full name</p>
+          <h5><%= @profile.fullname %></h5>
+        <p>Biography</p>
+          <h5><%= @profile.biography %></h5>
+        <p>Contact infomation</p>
+          <h5> <%= @profile.contact_info %></h5>
+        <p>Company</p>
+          <h5><%= @profile.company %></h5>
+        <p>Location</p>
+          <h5> <%= @profile.location %></h5>
+        <p>Skills</p>
+          <h5><%= @profile.skills %></h5>
+        <p>Hobby</p>
+          <h5><%= @profile.hobby %></h5>
+
       </div>
 
     <div class="button-container">

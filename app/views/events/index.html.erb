@@ -15,6 +15,7 @@
 
           <div class="inside-container">
             <div class="avatar-container">
+              <p class="mb-1" >Host </p>
               <img src="<%=(url_for(event.user.avatar))%>", class="card-avatar">
             </div>
 
@@ -25,8 +26,7 @@
 
           <div class="name-container">
             <h3><strong> <%= event.event_name.upcase %> </strong></h3>
-            <p class="mb-1" >When: <%= event.start_time %> </p>
-            <p class="mb-1" >Host: <%= event.user.nickname %> </p>
+            <p class="mb-1" >Date: <%= event.start_time %> </p>
           </div>
         </div>
 

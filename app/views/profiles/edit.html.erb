@@ -4,12 +4,12 @@
     <%= simple_form_for @profile do |f| %>
       <%= f.input :fullname %>
       <%= f.input :batch_number %>
-      <%= f.input :biography %>
-      <%= f.input :contact_info %>
-      <%= f.input :company %>
-      <%= f.input :location %>
+      <%= f.input :biography, placeholder: "Introduce yourself :)" %>
+      <%= f.input :contact_info, placeholder: "📞, ✉️ and more.." %>
+      <%= f.input :company, placeholder: "Where do you work?" %>
+      <%= f.input :location, placeholder:"📍 city or country" %>
       <%= f.input :skills %>
-      <%= f.input :hobby %>
+      <%= f.input :hobby, placeholder: "Tell us about you more!" %>
 
       <div class="buttons-container">
       <%= link_to "back", profiles_path, class: "btn btn-orange" %>
