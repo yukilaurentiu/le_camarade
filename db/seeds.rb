@@ -39,7 +39,7 @@ Event.create(
 
 Event.create(
   user_id: "4",
-  event_name: "Virtual Chat Ruby on Rails",
+  event_name: "Virtual Chat 'Ruby'",
   start_time: "2022-12-01",
   end_time: "2022-12-01",
   location: "online"
@@ -53,6 +53,7 @@ Event.create(
   location: "online"
 )
 puts "Events finished!"
+
 # event = Event.create!(
 #   event_name: "Paris Meetup",
 #   location: "18 Rue Beautreillis, 75004 Paris, France",

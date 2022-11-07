@@ -18,7 +18,7 @@
               <% if event.user.avatar.present? %>
                 <img src="<%=(url_for(event.user.avatar))%>", class="card-avatar">
               <% else %>
-                <%= image_tag "logo.png", class: "avatar" %>
+                <%= image_tag "logo.png", class: "card-avatar" %>
               <% end %>
             </div>
 
