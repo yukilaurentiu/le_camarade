@@ -54,6 +54,21 @@ Event.create(
 )
 puts "Events finished!"
 
+
+# require "faker"
+
+# puts "Create one example user!"
+# user = User.create!(
+#   # name: "Oliver Stoislow",   #Faker::Name.name
+#   email: Faker::Internet.email, # "Sydel@email.com"
+#   password: "123456",
+#   encrypted_password: "123456"
+# )
+# user.save!
+# puts "User finished!"
+# puts "Destroying events..."
+# Event.destroy_all
+# puts "Creating events..."
 # event = Event.create!(
 #   event_name: "Paris Meetup",
 #   location: "18 Rue Beautreillis, 75004 Paris, France",

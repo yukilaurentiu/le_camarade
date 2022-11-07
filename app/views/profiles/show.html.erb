@@ -3,7 +3,7 @@
     <h1>user profile <%= @profile.user.nickname %></h1>
       <div>
         <% if @profile.user.avatar.present? %>
-          <img src="<%=(url_for(@profile.user.avatar))%>", class="avatar">
+          <img src="<%=(url_for(@profile.user.avatar))%>", class="card-avatar">
         <% else %>
           <%= image_tag "logo.png", class: "avatar" %>
         <% end %>
