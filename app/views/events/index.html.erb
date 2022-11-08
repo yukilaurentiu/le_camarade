@@ -16,7 +16,11 @@
           <div class="inside-container">
             <div class="avatar-container">
               <p class="mb-1" >Host </p>
-              <img src="<%=(url_for(event.user.avatar))%>", class="card-avatar">
+              <% if event.user.avatar.present? %>
+                <img src="<%=(url_for(event.user.avatar))%>", class="card-avatar">
+              <% else %>
+                <%= image_tag "logo.png", class: "card-avatar" %>
+              <% end %>
             </div>
 
 

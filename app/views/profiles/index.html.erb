@@ -14,7 +14,11 @@
 
           <div class="inside-container">
             <div class="avatar-container">
-              <img src="<%=(url_for(profile.user.avatar))%>", class="card-avatar">
+              <% if profile.user.avatar.present? %>
+                <img src="<%=(url_for(profile.user.avatar))%>", class="card-avatar">
+              <% else %>
+                <%= image_tag "logo-white.png", class: "card-avatar" %>
+              <% end %>
             </div>
 
 
