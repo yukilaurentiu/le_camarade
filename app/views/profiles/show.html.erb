@@ -7,24 +7,35 @@
       <% else %>
         <%= image_tag "logo.png", class: "card-avatar" %>
       <% end %>
-      <div><p>Batch number</p> <div class="batch-container"><%= @profile.batch_number %> </div></div>
+
+      <% case @profile %>
+        <% when @profile.batch_number.present? then %>
+          <div> <p>Batch number</p> <div class="batch-container"><%= @profile.batch_number %> </div></div>
     </div>
 
       <div class="profile-content">
-        <p>Full name</p>
+        <% when @profile.fullname.present? then %>
+          <p>Full name</p>
           <h5><%= @profile.fullname %></h5>
-        <p>Biography</p>
+        <% when @profile.biography.present? then %>
+          <p>Biography</p>
           <h5><%= @profile.biography %></h5>
-        <p>Contact infomation</p>
+        <% when @profile.contact_info then %>
+          <p>Contact infomation</p>
           <h5> <%= @profile.contact_info %></h5>
-        <p>Company</p>
+        <% when @profile.company.present? then %>
+          <p>Company</p>
           <h5><%= @profile.company %></h5>
-        <p>Location</p>
+        <% when @profile.location.present? then %>
+          <p>Location</p>
           <h5> <%= @profile.location %></h5>
-        <p>Skills</p>
+        <% when @profile.skills.present? then %>
+          <p>Skills</p>
           <h5><%= @profile.skills %></h5>
-        <p>Hobby</p>
+        <% when @profile.hobby.present? then %>
+          <p>Hobby</p>
           <h5><%= @profile.hobby %></h5>
+      <% end %>
       </div>
 
     <div class="button-container">
