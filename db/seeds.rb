@@ -1,16 +1,29 @@
-User.create(nickname: "yuki", email: "yuki@lewagon.com", password: "123456")
-User.create(nickname: "oliver", email: "oliver@lewagon.com", password: "123456")
-User.create(nickname: "sydel", email: "sydel@lewagon.com", password: "123456")
-User.create(nickname: "sara", email: "sara@lewagon.com", password: "123456")
-User.create(nickname: "beyze", email: "beyza@lewagon.com", password: "123456")
-User.create(nickname: "emma", email: "emma@lewagon.com", password: "123456")
+nicknames = ["yuki", "oliver", "sydel", "sara", "beyze", "yukiko", "sarah"]
+
+i = 0
+loop do
+  temp = User.create(nickname: nicknames[i], email: "#{nicknames[i]}@lewagon.com", password: "123456")
+  temp.avatar.attach(
+    io: File.open("#{Dir.pwd}/app/assets/images/avatar/pic#{i}.png"),
+    filename: "pic#{i}.png"
+  )
+
+  sleep(1)
+  i += 1
+
+  if i == 7
+    break       # this will cause execution to exit the loop
+  end
+end
+
+
+# User.create(nickname: "emma", email: "emma@lewagon.com", password: "123456")
 # User.create(nickname: "sophia", email: "sophia@lewagon.com", password: "123456")
 # User.create(nickname: "nora", email: "nora@lewagon.com", password: "123456")
 # User.create(nickname: "james", email: "james@lewagon.com", password: "123456")
 # User.create(nickname: "jack", email: "jack@lewagon.com", password: "123456")
 
 puts "Users finished!"
-
 puts "Creating events..."
 
 Event.create(
@@ -22,7 +35,7 @@ Event.create(
 )
 
 Event.create(
-  user_id: "2",
+  user_id: "4",
   event_name: "LeWagon Bar Tour",
   start_time: "2022-11-20",
   end_time: "2022-11-21",
@@ -30,7 +43,7 @@ Event.create(
 )
 
 Event.create(
-  user_id: "3",
+  user_id: "6",
   event_name: "Le Wagon Chill Lounge",
   start_time: "2022-11-23",
   end_time: "2022-11-25",
@@ -38,7 +51,7 @@ Event.create(
 )
 
 Event.create(
-  user_id: "4",
+  user_id: "7",
   event_name: "Virtual Chat 'Ruby'",
   start_time: "2022-12-01",
   end_time: "2022-12-01",
@@ -52,6 +65,7 @@ Event.create(
   end_time: "2022-12-25",
   location: "online"
 )
+
 puts "Events finished!"
 
 
