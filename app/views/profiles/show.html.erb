@@ -8,31 +8,38 @@
         <%= image_tag "logo.png", class: "card-avatar" %>
       <% end %>
 
-      <% case @profile %>
-        <% when @profile.batch_number.present? then %>
-          <div> <p>Batch number</p> <div class="batch-container"><%= @profile.batch_number %> </div></div>
+        <% if @profile.batch_number.present? %>
+          <div> <p>Batch number</p>
+          <div class="batch-container"><%= @profile.batch_number %> </div></div>
+          <% end %>
     </div>
 
       <div class="profile-content">
-        <% when @profile.fullname.present? then %>
+        <% if @profile.fullname.present? %>
           <p>Full name</p>
           <h5><%= @profile.fullname %></h5>
-        <% when @profile.biography.present? then %>
+        <% end %>
+        <% if @profile.biography.present? %>
           <p>Biography</p>
           <h5><%= @profile.biography %></h5>
-        <% when @profile.contact_info then %>
+        <% end %>
+        <% if @profile.contact_info.present? %>
           <p>Contact infomation</p>
           <h5> <%= @profile.contact_info %></h5>
-        <% when @profile.company.present? then %>
+        <% end %>
+        <% if @profile.company.present? %>
           <p>Company</p>
           <h5><%= @profile.company %></h5>
-        <% when @profile.location.present? then %>
+        <% end %>
+        <% if @profile.location.present? %>
           <p>Location</p>
           <h5> <%= @profile.location %></h5>
-        <% when @profile.skills.present? then %>
+        <% end %>
+        <% if @profile.skills.present? %>
           <p>Skills</p>
           <h5><%= @profile.skills %></h5>
-        <% when @profile.hobby.present? then %>
+        <% end %>
+        <% if @profile.hobby.present? %>
           <p>Hobby</p>
           <h5><%= @profile.hobby %></h5>
       <% end %>
