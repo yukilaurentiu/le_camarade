@@ -19,3 +19,8 @@
 .receiver-style {
   background-color: $champagne;
 }
+
+.message {
+  display: flex;
+  flex-direction: row;
+}
