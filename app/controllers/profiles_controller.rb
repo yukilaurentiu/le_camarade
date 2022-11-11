@@ -7,8 +7,11 @@ class ProfilesController < ApplicationController
       sql_query = <<~SQL
         profiles.fullname ILIKE :query
         OR profiles.skills ILIKE :query
+        OR cast(profiles.batch_number as text) ILIKE :query
+        OR profiles.location ILIKE :query
+        OR users.nickname ILIKE :query
       SQL
-      @profiles = Profile.where(sql_query, query: "%#{params[:query]}%")
+      @profiles = Profile.joins(:user).where(sql_query, query: "%#{params[:query]}%")
     else
       @profiles = Profile.all
     end
