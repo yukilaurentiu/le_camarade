@@ -17,16 +17,16 @@ h1 {
 
 .container {
   display: flex;
-  justify-content: center;
-}
-
-.content {
+  // justify-content: space-between;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   padding-bottom: 70px;
-  text-align: center;
 }
 
-.content h1{
+.title-container {
+  width: 100%;
   padding: 40px;
+  text-align: center;
 }
 
 .event-container {

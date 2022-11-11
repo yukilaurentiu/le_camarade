@@ -1,40 +1,39 @@
 <div class="container">
-  <div class="content">
-      <h1>  Profile 🌱 </h1>
-      <div>
-        <% color_count = 0 %>
-        <% @profiles.each do |profile| %>
-
-          <% color_count += 1 %>
-          <% if color_count.odd?  %>
-            <div class="card-container card-container-one position-relative">
-          <% else %>
-            <div class="card-container card-container-two position-relative">
-          <% end %>
-
-          <div class="inside-container">
-            <div class="avatar-container">
-              <% if profile.user.avatar.present? %>
-                <img src="<%=(url_for(profile.user.avatar))%>", class="card-avatar">
-              <% else %>
-                <%= image_tag "logo-white.png", class: "card-avatar" %>
-              <% end %>
-            </div>
-
-
-            <%= link_to profile_path(profile) do %>
-              <div class="mb-1 stretched-link"> </div>
-            <% end %>
-
-
-
-            <div class="name-container">
-              <h3><strong> <%= profile.user.nickname.upcase %> </strong></h3>
-              <p class="mb-1" >Batch number: <%= profile.batch_number %> </p>
-            </div>
-          </div>
-
-        </div>
-      <% end %>
+  <div class="title-container">
+    <h1> Profile 🌱</h1>
   </div>
+  <% color_count = 0 %>
+  <% @profiles.each do |profile| %>
+
+    <% color_count += 1 %>
+    <% if color_count.odd?  %>
+      <div class="card-container card-container-one position-relative">
+    <% else %>
+      <div class="card-container card-container-two position-relative">
+    <% end %>
+
+    <div class="inside-container">
+      <div class="avatar-container">
+        <% if profile.user.avatar.present? %>
+          <img src="<%=(url_for(profile.user.avatar))%>", class="card-avatar">
+        <% else %>
+          <%= image_tag "logo-white.png", class: "card-avatar" %>
+        <% end %>
+      </div>
+
+
+      <%= link_to profile_path(profile) do %>
+        <div class="mb-1 stretched-link"> </div>
+      <% end %>
+
+
+
+      <div class="name-container">
+        <h3><strong> <%= profile.user.nickname.upcase %> </strong></h3>
+        <p class="mb-1" >Batch number: <%= profile.batch_number %> </p>
+      </div>
+    </div>
+    </div>
+
+  <% end %>
 </div>
