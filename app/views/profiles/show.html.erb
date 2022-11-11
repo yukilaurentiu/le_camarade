@@ -1,18 +1,21 @@
 <div class="container">
-  <div class="content">
+  <div class="title-container">
     <h1>Hello, I am <%= @profile.user.nickname.upcase %> 🌱</h1>
-    <div class="avatar-content">
-      <% if @profile.user.avatar.present? %>
-        <img src="<%=(url_for(@profile.user.avatar))%>", class="profile-avatar">
-      <% else %>
-        <%= image_tag "logo.png", class: "card-avatar" %>
-      <% end %>
+  </div>
 
-        <% if @profile.batch_number.present? %>
-          <div> <p>Batch number</p>
-          <div class="batch-container"><%= @profile.batch_number %> </div></div>
-          <% end %>
-    </div>
+      <div class="avatar-content">
+        <% if @profile.user.avatar.present? %>
+          <img src="<%=(url_for(@profile.user.avatar))%>", class="profile-avatar">
+        <% else %>
+          <%= image_tag "logo.png", class: "card-avatar" %>
+        <% end %>
+
+          <% if @profile.batch_number.present? %>
+            <div> <p>Batch number</p>
+            <div class="batch-container"><%= @profile.batch_number %> </div></div>
+            <% end %>
+      </div>
+     
 
       <div class="profile-content">
         <% if @profile.fullname.present? %>
