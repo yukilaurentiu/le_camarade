@@ -1,4 +1,4 @@
-nicknames = ["yuki", "oliver", "sydel", "sara", "beyze", "yukiko", "sarah", "emma", "nora", "james"]
+nicknames = ["yuki", "oliver", "sydel", "sara", "beyza", "yukiko", "sarah", "emma", "nora", "james"]
 
 i = 0
 loop do
@@ -8,11 +8,11 @@ loop do
     filename: "pic#{i}.png"
   )
 
-  sleep(1)
+  # sleep(3)
   i += 1
 
-  if i == 7
-    break       # this will cause execution to exit the loop
+  if i == 10
+    break   # this will cause execution to exit the loop
   end
 end
 
