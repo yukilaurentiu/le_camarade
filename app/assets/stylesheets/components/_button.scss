@@ -35,17 +35,17 @@
 }
 
 .btn.btn-orange {
-  color: $tangerine;
-  border: 1px solid $tangerine;
+  color: $fire-opal;
+  border: 1px solid $fire-opal;
   border-radius: 5px;
   background-color: $powder;
   text-decoration: none;
 
   &:hover {
-    color: $tangerine;
+    color: $fire-opal;
     opacity: 0.5;
     background-color: $powder;
-    border: 1px solid $tangerine;
+    border: 1px solid $fire-opal;
   }
 }
 
