@@ -20,7 +20,9 @@
 
           <div class="chat-name-container">
             <h3><strong> <%= chatroom.name.upcase %> </strong></h3>
-            <p>Last message: <%= chatroom.messages.last.created_at.strftime("%a %b %e at %H:%M") %></p>
+            <% if chatroom.messages.present? %>
+              <p>Last message: <%= chatroom.messages.last.created_at.strftime("%a %b %e at %H:%M") %></p>
+            <% end %>
           </div>
         </div>
         </div>
