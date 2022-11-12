@@ -17,6 +17,7 @@ class ChatroomsController < ApplicationController
 
   def create
     @chatroom = Chatroom.new(chatroom_params)
+    # @chatroom.user = current_user
     if @chatroom.save
       redirect_to chatroom_path(@chatroom), status: :see_other, notice: "You successfully created chatroom: #{@chatroom.name}"
     else

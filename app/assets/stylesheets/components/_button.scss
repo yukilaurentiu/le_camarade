@@ -8,6 +8,8 @@
 .button-container {
   margin-top: 50px;
   margin-bottom: 50px;
+  width: 100%;
+  text-align: center;
 }
 
 .log-in {
@@ -21,43 +23,43 @@
   color: $powder;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: $pink;
+  background-color: $fire-opal;
   text-decoration: none;
 
   &:hover {
     color: $powder;
     opacity: 0.8;
-    background-color: $pink;
+    background-color: $fire-opal;
     border: 1px solid black;
   }
 }
 
 .btn.btn-orange {
-  color: $tangerine;
-  border: 1px solid $tangerine;
+  color: $fire-opal;
+  border: 1px solid $fire-opal;
   border-radius: 5px;
   background-color: $powder;
   text-decoration: none;
 
   &:hover {
-    color: $tangerine;
+    color: $fire-opal;
     opacity: 0.5;
     background-color: $powder;
-    border: 1px solid $tangerine;
+    border: 1px solid $fire-opal;
   }
 }
 
 .btn.btn-square {
   color: $powder;
   border: 1px solid black;
-  background: $pink;
+  background: $fire-opal;
   height: 40px;
   padding: 0 15px 0 15px;
 
   &:hover {
     color: $powder;
     opacity: 0.8;
-    background-color: $pink;
+    background-color: $fire-opal;
     border: 1px solid black;
   }
 }

@@ -12,6 +12,7 @@ h5 {
   display: flex;
   justify-content: space-around;
   margin-bottom: 30px;
+  width: 100%;
 }
 
 .profile-avatar {
@@ -21,9 +22,10 @@ h5 {
 }
 
 .batch-container {
- background-color: #fdbe9b;
+ background-color: $champagne;
   border-radius: 5px;
   padding: 10px;
+  text-align: center;
 }
 
 p {

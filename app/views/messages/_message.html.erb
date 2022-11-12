@@ -1,16 +1,18 @@
 <div id="message-<%= message.id %>">
-  <div>
+  <div class="message">
     <small>
-      <% if message.user.avatar.present? %>
-        <img src="<%=(url_for(message.user.avatar))%>", class="avatar">
-      <% else %>
-        <%= image_tag "logo.png", class: "avatar" %>
-      <% end %>
+        <% if message.user.avatar.present? %>
+          <img src="<%=(url_for(message.user.avatar))%>", class="avatar">
+        <% else %>
+          <%= image_tag "logo.png", class: "avatar" %>
+        <% end %>
       <strong><%= message.user.nickname %></strong>
-      <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
+      <i><%= message.created_at.strftime("%a %b %e at %H:%M") %></i>
     </small>
-    <p><%= message.content %></p>
-  </div>
+     <p><%= message.content %></p>
+    </div>
+
+
   <div class="d-none">
     passcode=<%= message.user.id %>
   </div>

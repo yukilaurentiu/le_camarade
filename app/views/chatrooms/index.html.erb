@@ -1,32 +1,34 @@
 <div class="container">
-  <div class="content">
+  <div class="title-container">
     <h1>Chatrooms <i class="fa-regular fa-comments"></i></h1>
-      <div>
-        <% color_count = 0 %>
-        <% @chatrooms.each do |chatroom| %>
+  </div>
 
-          <% color_count += 1 %>
-          <% if color_count.odd?  %>
-            <div class="card-container card-container-one position-relative">
-          <% else %>
-            <div class="card-container card-container-two position-relative">
+    <% color_count = 0 %>
+    <% @chatrooms.each do |chatroom| %>
+
+      <% color_count += 1 %>
+      <% if color_count.odd?  %>
+        <div class="card-container card-container-one position-relative">
+      <% else %>
+        <div class="card-container card-container-two position-relative">
+      <% end %>
+
+        <div class="chat">
+          <%= link_to chatroom_path(chatroom) do %>
+            <div class="stretched-link"></div>
           <% end %>
 
-          <div class="chat">
-            <%= link_to chatroom_path(chatroom) do %>
-              <div class="stretched-link"></div>
+          <div class="chat-name-container">
+            <h3><strong> <%= chatroom.name.upcase %> </strong></h3>
+            <% if chatroom.messages.present? %>
+              <p>Last message: <%= chatroom.messages.last.created_at.strftime("%a %b %e at %H:%M") %></p>
             <% end %>
-
-            <div class="name-container">
-              <h3><strong> <%= chatroom.name.upcase %> </strong></h3>
-            </div>
           </div>
+        </div>
+        </div>
 
-      </div>
-        <% end %>
-
+    <% end %>
       <div class="button-container">
         <%= link_to "Start Chat", new_chatroom_path, class: "btn btn-pink" %>
       </div>
-  </div>
 </div>

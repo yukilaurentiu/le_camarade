@@ -1,4 +1,4 @@
-nicknames = ["yuki", "oliver", "sydel", "sara", "beyze", "yukiko", "sarah"]
+nicknames = ["yuki", "oliver", "sydel", "sara", "beyza", "yukiko", "sarah", "emma", "nora", "james"]
 
 i = 0
 loop do
@@ -8,18 +8,16 @@ loop do
     filename: "pic#{i}.png"
   )
 
-  sleep(1)
+  # sleep(3)
   i += 1
 
-  if i == 7
-    break       # this will cause execution to exit the loop
+  if i == 10
+    break   # this will cause execution to exit the loop
   end
 end
 
 
-# User.create(nickname: "emma", email: "emma@lewagon.com", password: "123456")
 # User.create(nickname: "sophia", email: "sophia@lewagon.com", password: "123456")
-# User.create(nickname: "nora", email: "nora@lewagon.com", password: "123456")
 # User.create(nickname: "james", email: "james@lewagon.com", password: "123456")
 # User.create(nickname: "jack", email: "jack@lewagon.com", password: "123456")
 
@@ -59,11 +57,35 @@ Event.create(
 )
 
 Event.create(
+  user_id: "3",
+  event_name: "Zurich Meetup",
+  start_time: "2022-12-15",
+  end_time: "2022-12-16",
+  location: "Bahnhofpl., 8001 Zürich, Switzerland"
+)
+
+Event.create(
   user_id: "5",
   event_name: "Virtual Holiday Games",
   start_time: "2022-12-25",
   end_time: "2022-12-25",
   location: "online"
+)
+
+Event.create(
+  user_id: "1",
+  event_name: "Christmas Market Tour",
+  start_time: "2022-12-17",
+  end_time: "2022-12-18",
+  location: "Rathauspark W, 1010 Wien, Austria"
+)
+
+Event.create(
+  user_id: "2",
+  event_name: "BBQ at Rhine river",
+  start_time: "2023-05-23",
+  end_time: "2023-05-23",
+  location: "Cologne, Germany"
 )
 
 puts "Events finished!"
