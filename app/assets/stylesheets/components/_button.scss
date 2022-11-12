@@ -23,13 +23,13 @@
   color: $powder;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: $pink;
+  background-color: $fire-opal;
   text-decoration: none;
 
   &:hover {
     color: $powder;
     opacity: 0.8;
-    background-color: $pink;
+    background-color: $fire-opal;
     border: 1px solid black;
   }
 }
@@ -52,14 +52,14 @@
 .btn.btn-square {
   color: $powder;
   border: 1px solid black;
-  background: $pink;
+  background: $fire-opal;
   height: 40px;
   padding: 0 15px 0 15px;
 
   &:hover {
     color: $powder;
     opacity: 0.8;
-    background-color: $pink;
+    background-color: $fire-opal;
     border: 1px solid black;
   }
 }
